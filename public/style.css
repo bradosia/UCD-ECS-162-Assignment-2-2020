@@ -1,0 +1,319 @@
+/* styles */
+/* size of margin, border and padding is included in size of element
+   in internal CSS calculations */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* font stack */
+  font-family: Verbana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  /* item spacing will be controlled by flex-grow */
+  min-height: 100vh;
+  /* the height of the body is at least the height of the viewport */
+  /* needed to make sticky footer work */
+}
+
+header {
+  flex-grow: 0;
+}
+
+h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3em;
+  margin: 36px;
+}
+
+main {
+  width: 80%;
+  max-width: 50em;
+  margin: auto;
+  /* flex item commands */
+  flex-grow: 1;
+  /* take one share of any extra space */
+  /* flex container commands */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Postcard Widget
+*/
+postcard {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background-color: #e6e2cf;
+  width: 100%;
+  height: 27em;
+  border-radius: 1em;
+}
+
+postcard .imageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2.5em 1em 2.5em 2.5em;
+  flex: 1;
+  border-style: dashed;
+  border-color: #000000;
+  border-width: 2px;
+}
+
+postcard .imageWrapperAfter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  max-width: 20em;
+  margin: 1.5em 0em 1.5em 1.5em;
+}
+
+postcard .imageWrapper label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1em;
+  font-size: 2em;
+  flex-grow: 1;
+  height: 100%;
+  font-family: arial;
+  font-weight: bold;
+  color: #000000;
+}
+
+postcard .imageWrapperAfter label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+  margin: 0.5em;
+  background-color: transparent;
+  border: #000000 2px solid;
+  font-weight: bold;
+  font-size: 1.1em;
+  width: 10em;
+}
+
+postcard .imageWrapper label:hover {
+  cursor: pointer;
+}
+
+postcard .imageWrapper img {
+  display: none;
+}
+
+postcard .imageWrapperAfter img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+postcard input {
+  display: none;
+}
+
+postcard .dividerLine {
+  margin: 2em 0em 2em 0em;
+  flex-basis: 2px;
+  display: block;
+  background-color: #000000;
+}
+
+postcard .text {
+  display: block;
+  margin: 1.6em 1.6em 1.6em 1em;
+  flex: 1;
+  background: transparent;
+  border-style: none;
+  border-color: Transparent;
+  overflow: auto;
+  resize: none;
+  font-size: 1.5em;
+}
+
+.postcardControls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 3em 0em 3em 0em;
+}
+
+postcard-control-font {
+  flex: 2;
+}
+
+postcard-control-font p {
+  padding: 0.5em 0.5em 0.5em 0em;
+  font-size: 1.2em;
+}
+
+postcard-control-font ul {
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+postcard-control-font button {
+  display: block;
+  background-color: transparent;
+  border: 0;
+  text-align: left;
+  font-size: 1.3em;
+  line-height: 1.2em;
+}
+
+postcard-control-font button:before {
+  display: inline-block;
+  margin-right: 0.5em;
+  font-family: Arial, Helvetica, sans-serif;
+  content: "⬦";
+}
+
+postcard-control-font button.active {
+  /* don't remove entirely
+   * for accessibility reasons
+   */
+  outline: 0;
+}
+
+postcard-control-font button.active:before {
+  content: "❖";
+}
+
+postcard-control-font button:hover {
+  cursor: pointer;
+}
+
+postcard-control-color {
+  flex: 2;
+}
+
+postcard-control-color p {
+  padding: 0.5em 0.5em 0.5em 0em;
+  font-size: 1.2em;
+}
+
+postcard-control-color ul {
+  padding: 0.5em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+postcard-control-color button {
+  display: block;
+  margin: 0.3em;
+  width: 3.5em;
+  height: 3.5em;
+  background-color: #bbbbbb;
+  border: 0;
+  /* hide inner text */
+  color: transparent;
+  user-select: none;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+postcard-control-color button.active {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #000000;
+  /* don't remove entirely
+   * for accessibility reasons
+   */
+  outline:0;
+}
+
+postcard-control-color button:hover {
+  cursor: pointer;
+}
+
+.postcardControls .share {
+  padding: 3em 0.5em 0.5em 0em;
+  flex: 1;
+}
+
+.share button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+  background-color: transparent;
+  border: #000000 2px solid;
+  font-weight: bold;
+  font-size: 1.1em;
+  width: 10em;
+}
+
+footer {
+  /*
+  position: absolute;
+  bottom: 0;
+  */
+  /* flex item commands */
+  flex-grow: 0;
+  /* I don't take up any extra space */
+  /* flex container commands */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 1em 0;
+  font-size: 1.5em;
+}
+
+/* mobile */
+@media only screen and (max-width: 600px) {
+  main {
+    width: 95%;
+  }
+  h1 {
+    margin: 0.9em 0.5em 0.9em 0.5em;
+    font-size: 3em;
+  }
+  postcard {
+    flex-direction: column;
+    height: 36em;
+  }
+  postcard .imageWrapper {
+    margin: 2.1em 2.1em 0.5em 2.1em;
+  }
+  postcard .imageWrapperAfter {
+    margin: 1.5em 1.5em 0em 1.5em;
+  }
+  postcard .text {
+    display: block;
+    margin: 1.0em 1.5em 1.0em 1.5em;
+  }
+  .postcardControls {
+    display: flex;
+    flex-direction: column;
+    padding: 2em 0em 2em 0em;
+  }
+  postcard .dividerLine {
+    margin: 0em 1em 0em 1em;
+    flex-basis: 2px;
+    display: block;
+    background-color: #000000;
+  }
+  .postcardControls .share {
+    padding: 2em 1.0em 0.5em 1.0em;
+  }
+}
+
+/* tablet */
+@media only screen and (min-width: 601px) and (max-width: 1279px) {
+  main {
+    width: 90%;
+  }
+}
+
+/* desktop */
+/* @media only screen and (min-width: 1280px) {} */

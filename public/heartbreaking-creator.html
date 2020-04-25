@@ -1,0 +1,64 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Show me!</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/reset.css">
+  <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Homemade+Apple|Indie+Flower|Long+Cang&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <h1>
+      Daily Postcard Creator
+    </h1>
+  </header>
+
+  <main>
+
+    <postcard id="myPostcard">
+      <div class="imageWrapper">
+        <img />
+        <label for="fileChooser">Choose Image</label>
+        <input type="file" id="fileChooser" accept="image/png, .jpeg, .jpg, image/gif" />
+      </div>
+      <div class="dividerLine"></div>
+      <textarea class="text" placeholder="write your message here!"></textarea>
+    </postcard>
+
+    <div class="postcardControls">
+      <postcard-control-font id="myPostcardControlFont">
+        <p>Choose your font</p>
+        <ul>
+        </ul>
+      </postcard-control-font>
+      <postcard-control-color id="myPostcardControlColor">
+        <p>Choose your color</p>
+        <ul>
+        </ul>
+      </postcard-control-color>
+      <div class="share">
+        <button id="myShareButton">Share postcard</button>
+      </div>
+    </div>
+
+  </main>
+
+
+  <footer>
+    Made on Glitch!
+    <script src="./script.js"></script>
+    <script src="./creator.js"></script>
+  </footer>
+
+</body>
+
+</html>
